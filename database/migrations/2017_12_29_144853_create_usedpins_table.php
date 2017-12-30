@@ -18,7 +18,7 @@ class CreateUsedpinsTable extends Migration
             $table->integer('user_id');
             $table->integer('post_id');
             $table->integer('pin_id');
-            $table->integer('status')->default(0);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

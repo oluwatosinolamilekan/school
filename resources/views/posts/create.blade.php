@@ -5,17 +5,23 @@
     @include('welcome.navbar')
     
         <div class="container">
-    
+                            {{--  {{dd($pin->numbers)}}  --}}
+
             @include('pages.carousel')
             <h2>Drop a Question</h2>
                     <form action="/posts" method="POST">
                         {{ csrf_field() }}
-                    
+
+                        @include('partials.error')
+                        <input  class="form-control" type="hidden" name="random" value="$pin->numbers" id="name"  required>
+                        
                     <div class="form-group">
                         <label for="name">Title <span>*</span></label>
                         <input  class="form-control" type="text" name="title" id="name"  required>
                     </div>
 
+
+                        
 
                             <div class="form-group">
                                 <label for="fileselect">Files of the Question:</label>
@@ -33,14 +39,16 @@
                     
                     <div class="form-group">
                         <label for="body">Content</label>
-                        <textarea class="form-control"  name="body" id="body"  rows="5" size="10"></textarea>
+                        <textarea class="form-control "  name="body" id="summernote" rows="5" size="10"></textarea>
                     </div>
+
                     <div class="form-group">
                         <input class="btn btn-block btn-submit" type="submit" name="submit" value="Submit Form">
                         &nbsp;
                     </div>
-                
                     
+                
+
                     <script>
                         // output information
                         function Output(msg) {

@@ -51,12 +51,6 @@ class PinsController extends Controller
 
     public function enter()
     {
-        // if($pin->user_id)
-        // {
-        //     //check if pin exist
-
-        //     return redirect()->route('posts.enter', compact('pins',$pins));
-        // }
         return view ('posts.enter');
     }
 }

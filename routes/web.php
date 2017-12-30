@@ -40,7 +40,9 @@ Route::get('adminpanel', 'AdminController@admin');
 Route::get('generatepin','AdminController@generate');
 Route::get('enterpin','PinsController@enterpin');
 Route::post('enterpin','PinsController@create');
-Route::get('enter','PinsController@enter');
+Route::get('enter','PostsController@enter');
+Route::post('enter','PostsController@enterstore');
+
 
 
 
